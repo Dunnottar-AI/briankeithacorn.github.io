@@ -1,69 +1,83 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex>
-<title>Share a prayer request · Westwood Baptist Church</title><style>:root{--ink:#2b2622;--muted:#7a6f66;--bg:#fbf8f3;--card:#fff;--accent:#8a5a3b;--soft:#f1e9df}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,'Iowan Old Style',serif}
-header{background:linear-gradient(160deg,#5b3a29,#8a5a3b);color:#fff;padding:44px 20px 36px;text-align:center}
-header .kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
-header h1{font-size:clamp(28px,6vw,44px);margin:10px 0 8px;font-weight:normal}header p{margin:0 auto;max-width:560px;opacity:.92;font-size:16px}
-main{max-width:760px;margin:0 auto;padding:8px 18px 40px}h2{font-weight:normal;font-size:24px;margin:36px 0 10px;color:var(--accent)}
-h3{font:600 13px/1.3 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px}
-.meta{color:var(--muted);font:14px/1.5 system-ui,sans-serif}
-footer{max-width:760px;margin:0 auto;padding:22px 18px 50px;color:var(--muted);font:13px/1.6 system-ui,sans-serif;border-top:1px solid #e6dccf}
-.panel{background:var(--card);border-radius:16px;padding:18px 20px;box-shadow:0 2px 14px rgba(60,40,20,.07)}
-label.f{display:block;font:600 14px system-ui,sans-serif;margin:14px 0 6px}
-input[type=text],textarea{width:100%;font:16px Georgia,serif;padding:10px 12px;border:1px solid #d9cbbb;border-radius:10px;background:#fffdf9;color:var(--ink)}
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Share a Prayer Request · Westwood Baptist Church</title><meta name=robots content=noindex><style id=wwhub>:root{--ink:#262b28;--sage:#4f5a52;--lime:#7ccf5a;--bg:#f7f8f5;--muted:#5d655e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Poppins,system-ui,sans-serif}
+.hero{position:relative;color:#fff;background:linear-gradient(180deg,rgba(38,43,40,.45),rgba(38,43,40,.6)),url(/westwood/img/hero.svg) 74% 15%/cover no-repeat #262b28!important;padding:clamp(56px,10vw,120px) 20px clamp(48px,8vw,96px);text-align:center}
+.hero>*{position:relative}
+.kick{font:600 13px/1 ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--sage)}
+.hero h1{font:400 clamp(34px,7vw,64px)/1.08 Georgia,"Iowan Old Style",serif;margin:16px auto 14px;max-width:900px;letter-spacing:-.02em}
+.hero p{max-width:620px;margin:0 auto;opacity:.9}
+.bigsearch{display:flex;border:1px solid #d9ddd6;max-width:680px;margin:30px auto 0;background:#fff;border-radius:999px;padding:6px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.bigsearch input{flex:1;min-width:0;border:0;background:none;font:18px Poppins,system-ui,sans-serif;padding:12px 18px;color:var(--ink);border-radius:999px}
+.bigsearch input:focus{outline:none}.bigsearch:focus-within{box-shadow:0 0 0 3px var(--lime),0 10px 40px rgba(0,0,0,.25)}
+.bigsearch button{border:0;border-radius:999px;background:var(--lime);color:var(--ink);font:600 16px Poppins,system-ui,sans-serif;padding:0 26px;cursor:pointer}
+.counts{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;margin:26px 0 0;font:13px ui-monospace,Menlo,monospace;letter-spacing:.06em;opacity:.88}.counts b{color:var(--lime);font-size:15px}
+main{max-width:1080px;margin:0 auto;padding:clamp(36px,6vw,72px) 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{display:block;background:#fff;border-radius:20px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:0 2px 18px rgba(38,43,40,.07);transition:transform .15s}
+.card:hover,.card:focus-visible{transform:translateY(-3px);outline:3px solid var(--lime)}.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--sage)}
+.card .in{padding:18px 22px 22px}.num{font:12px ui-monospace,Menlo,monospace;letter-spacing:.14em;color:var(--muted)}
+.card h2{font:400 28px/1.15 Georgia,serif;margin:6px 0 6px}.card p{margin:0;color:var(--muted);font-size:15px}
+h2.sec{font:400 clamp(26px,4vw,38px)/1.15 Georgia,serif;margin:48px 0 16px}h2.sec:first-child{margin-top:0}
+.crow{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:16px;padding:12px;margin:10px 0;text-decoration:none;color:var(--ink);box-shadow:0 1px 10px rgba(38,43,40,.06)}
+.crow:hover,.crow:focus-visible{outline:2px solid var(--lime)}.crow img{width:150px;aspect-ratio:16/9;object-fit:cover;border-radius:10px;flex:none}
+.crow q{display:block;font:16px/1.45 Georgia,serif;quotes:"“" "”"}.chip{display:inline-block;background:var(--ink);color:var(--lime);font:600 12px ui-monospace,Menlo,monospace;padding:3px 9px;border-radius:999px;margin:0 8px 6px 0}
+.lab{font:600 13px Poppins,system-ui,sans-serif;color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:10px}.pill{background:#fff;border:1px solid #d9ddd6;border-radius:999px;padding:9px 16px;text-decoration:none;color:var(--ink);font-size:15px}.pill:hover{border-color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:var(--ink);font-weight:600;padding:12px 22px;border-radius:999px;text-decoration:none}
+footer.wwf{background:var(--ink);color:#cfd6cc;text-align:center;padding:40px 20px;font-size:14px}footer.wwf a{color:var(--lime)}footer.wwf .big{font:400 clamp(22px,4vw,32px) Georgia,serif;color:#fff;margin:0 0 10px}
+
+.tile{background:linear-gradient(160deg,#4f5a52,#3a443d);color:#fff;min-height:190px}.tile .in{padding:26px 26px 28px}.tile .ic{color:var(--lime)}.tile h2{color:#fff;margin:14px 0 6px}.tile p{color:#dfe6dc}
+@media(max-width:600px){.tile{min-height:0}.crow img{width:104px}.card h2{font-size:24px}.bigsearch input{font-size:16px;padding:10px 12px}.bigsearch button{padding:0 16px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}</style><style>.panel{background:var(--card);border-radius:16px;padding:18px 20px;box-shadow:0 2px 14px rgba(38,43,40,.07)}
+label.f{display:block;font:600 14px Poppins,system-ui,sans-serif;margin:14px 0 6px}
+input[type=text],textarea{width:100%;font:16px Poppins,system-ui,sans-serif;padding:10px 12px;border:1px solid #d9ddd6;border-radius:10px;background:#fff;color:var(--ink)}
 textarea{min-height:120px}input:disabled{opacity:.5}
-.tog{display:flex;align-items:center;gap:10px;font:15px system-ui,sans-serif;margin:10px 0;cursor:pointer}.tog input{width:20px;height:20px;accent-color:var(--accent)}
-fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px system-ui,sans-serif;padding:0}legend .req{color:#a33}
+.tog{display:flex;align-items:center;gap:10px;font:15px Poppins,system-ui,sans-serif;margin:10px 0;cursor:pointer}.tog input{width:20px;height:20px;accent-color:var(--accent)}
+fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px Poppins,system-ui,sans-serif;padding:0}legend .req{color:#a33}
 .who{display:grid;gap:10px;margin-top:8px}@media(min-width:600px){.who{grid-template-columns:1fr 1fr}}
-.who label{display:flex;gap:12px;align-items:flex-start;border:2px solid #e6dccf;border-radius:14px;padding:12px 14px;cursor:pointer;background:#fffdf9}
+.who label{display:flex;gap:12px;align-items:flex-start;border:2px solid #d9ddd6;border-radius:14px;padding:12px 14px;cursor:pointer;background:#fff}
 .who input{position:absolute;opacity:0}.who .ic{font-size:26px;line-height:1}.who b{display:block;font-weight:normal;font-size:18px}
-.who small{display:block;color:var(--muted);font:13.5px/1.4 system-ui,sans-serif}
-.who label:has(input:checked){border-color:var(--accent);background:var(--soft)}.who label:has(input:focus-visible){outline:3px solid #c9a27f}
-.conf{display:inline-block;margin-top:4px;background:#5b3a29;color:#fff;font:600 11px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:10px}
-.btn{display:block;width:100%;margin-top:18px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:14px;font:600 17px system-ui,sans-serif;cursor:pointer}
-.err{color:#a33;font:14px system-ui,sans-serif;display:none}
-.crisis{margin-top:14px;background:#fdf1ec;border-left:4px solid #b4532a;padding:10px 12px;border-radius:8px;font:14px/1.5 system-ui,sans-serif}
+.who small{display:block;color:var(--muted);font:13.5px/1.4 Poppins,system-ui,sans-serif}
+.who label:has(input:checked){border-color:var(--accent);background:var(--soft)}.who label:has(input:focus-visible){outline:3px solid #7ccf5a}
+.conf{display:inline-block;margin-top:4px;background:#262b28;color:#fff;font:600 11px Poppins,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:10px}
+.panel .btn,#ok .btn{display:block;width:100%;margin-top:18px;background:var(--lime);color:var(--ink);border:0;border-radius:999px;padding:14px;font:600 17px Poppins,system-ui,sans-serif;cursor:pointer}
+.err{color:#a33;font:14px Poppins,system-ui,sans-serif;display:none}
+.crisis{margin-top:14px;background:#fff4ee;border-left:4px solid #b4532a;padding:10px 12px;border-radius:8px;font:14px/1.5 Poppins,system-ui,sans-serif}
 .ok{display:none;text-align:center}.ok .big{font-size:40px}
-.note{background:var(--soft);border-radius:10px;padding:8px 12px;font:14px system-ui,sans-serif;color:var(--accent)}
-.sample{display:inline-block;background:#fff3c4;color:#7a5b00;font:700 11px system-ui,sans-serif;letter-spacing:.08em;padding:3px 8px;border-radius:8px;text-transform:uppercase}
-.pr{background:var(--card);border-radius:14px;padding:14px 18px;margin:12px 0;box-shadow:0 2px 14px rgba(60,40,20,.07);position:relative}
+.note{background:var(--soft);border-radius:10px;padding:8px 12px;font:14px Poppins,system-ui,sans-serif;color:var(--accent)}
+.sample{display:inline-block;background:#fff3c4;color:#7a5b00;font:700 11px Poppins,system-ui,sans-serif;letter-spacing:.08em;padding:3px 8px;border-radius:8px;text-transform:uppercase}
+.pr{background:var(--card);border-radius:14px;padding:14px 18px;margin:12px 0;box-shadow:0 2px 14px rgba(38,43,40,.07);position:relative}
 .pr.pin{border:2px solid var(--accent)}.pr p{margin:6px 0 10px}.pr .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.pr button{background:var(--soft);color:var(--accent);border:0;border-radius:20px;padding:8px 14px;font:600 14px system-ui,sans-serif;cursor:pointer}
-.pr button.done{background:var(--accent);color:#fff}.pin-tag{font:600 12px system-ui,sans-serif;color:var(--accent)}
-.zero{color:#b4532a;font-weight:600}</style></head><body>
-<header><div class=kicker>Westwood Baptist Church · Olympia</div><h1>Share a prayer request</h1><p>“Carry each other’s burdens.” — Galatians 6:2. Tell us how we can pray for you.</p></header>
-<main>
-<p class=note><b>How this works:</b> every request is reviewed by a person. Nothing is shared automatically; the church decides.</p>
+.pr button{background:var(--soft);color:var(--accent);border:0;border-radius:20px;padding:8px 14px;font:600 14px Poppins,system-ui,sans-serif;cursor:pointer}
+.pr button.done{background:var(--accent);color:#fff}.pin-tag{font:600 12px Poppins,system-ui,sans-serif;color:var(--accent)}
+.zero{color:#b4532a;font-weight:600}</style><style>:root{--accent:#3b6e2a;--soft:#e3efd9;--card:#fff}main{max-width:760px}.verse{text-align:center;font:italic 19px/1.5 Georgia,serif;color:var(--sage);margin:0 0 22px}h2.w{font:400 clamp(26px,4vw,34px)/1.15 Georgia,serif;margin:44px 0 8px}.practice{text-align:center;font-size:13px;color:var(--muted);margin:30px 0 0}</style><style>@media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr)!important}ul.cl li{font-size:16px;line-height:1.55}}</style></head><body><!--wwnav--><link rel=preconnect href="https://fonts.gstatic.com" crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"><style id=wwnav-css>:root{--ink:#282c28;--muted:#5d655e;--bg:#f7f8f5;--card:#fff;--accent:#3b6e2a;--soft:#e3efd9;--ww-green:#7ccf5a;--ww-dark:#262b28;--ww-sage:#4f5a52}body{background:var(--bg)!important;color:var(--ink)}h1,h2{font-family:Georgia,"Iowan Old Style",serif;letter-spacing:-.01em}header{background:linear-gradient(180deg,rgba(38,43,40,.45),rgba(38,43,40,.6)),url(/westwood/img/hero.svg) 74% 15%/cover no-repeat #262b28!important;color:#fff!important;padding:40px 20px 36px!important}header .kicker{display:none}header h1{color:#fff;margin:0!important}header .kicker,.kick,.lk,h3{font-family:ui-monospace,"SF Mono",Menlo,monospace!important;letter-spacing:.14em}a.watch,.sbtn,.sbtn2{background:var(--ww-green)!important;color:var(--ww-dark)!important}.wwnav{position:sticky;top:0;z-index:50;background:var(--ww-dark);color:#fff;font:14px/1.4 Poppins,system-ui,sans-serif;padding:8px 14px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:center}.wwnav a{color:#e8efe3;text-decoration:none;padding:4px 0}.wwnav a.cur{color:var(--ww-green);font-weight:600}.wwnav a:focus-visible,.wwnav input:focus-visible{outline:2px solid var(--ww-green);outline-offset:2px}.wwnav .brand img{width:26px;height:26px;vertical-align:middle;margin-right:6px}.wwnav .brand{font-weight:600;color:#fff;margin-right:6px}.wwnav form{display:flex;margin:0}.wwnav input{width:170px;padding:6px 10px;border:0;border-radius:999px 0 0 999px;font:14px Poppins,system-ui,sans-serif}.wwnav button{border:0;border-radius:0 999px 999px 0;background:var(--ww-green);color:var(--ww-dark);font:600 13px Poppins,system-ui,sans-serif;padding:0 12px;cursor:pointer}@media(max-width:600px){.wwnav{font-size:13px;gap:2px 12px;padding:6px 8px}.wwnav .brand{flex:1 1 100%;text-align:center}}</style><nav class=wwnav aria-label="Site"><a class=brand href="https://westwoodbaptist.com"><img src="https://images.squarespace-cdn.com/content/v1/660de0642b19746d7242d628/3306bc63-c7b6-4122-8073-36a136cacae9/Color+Circle+%281%29.png?format=100w" alt="">Westwood Baptist Church</a><a href="/westwood/">Home</a><a href="/westwood/search/">Ask A Question</a><a href="/westwood/series/">Sermons</a><a href="/westwood/scripture/">Scripture</a><a href="/westwood/pray/" class=cur>Pray</a><a href="/westwood/groups/">Find A Group</a></nav><!--/wwnav--><section class=hero><h1>Share a Prayer Request</h1></section><main>
+<p class=verse>“Bear one another’s burdens.” Galatians 6:2 (ESV)</p><p class=note><b>How this works:</b> a real person reads every request. Nothing is shared unless the church says so.</p>
 <div class=panel>
 <form id=f novalidate>
 <label class=f for=nm>Your name <span class=meta>(optional)</span></label>
 <input type=text id=nm autocomplete=name placeholder="e.g. Jane">
 <label class=tog><input type=checkbox id=anon> Share anonymously</label>
 <label class=f for=req>Your prayer request</label>
-<textarea id=req required placeholder="What would you like prayer for?"></textarea>
+<textarea id=req required placeholder="What would you like us to pray for?"></textarea>
 <fieldset><legend>Who should see this? <span class=req>(required)</span></legend>
 <div class=who>
-<label><input type=radio name=who value=family><span class=ic>⛪</span><span><b>Our church family</b><small>Sent to the prayer team for review. It appears on the congregation’s prayer wall only once approved.</small></span></label>
-<label><input type=radio name=who value=group><span class=ic>📖</span><span><b>My small group leaders</b><small>Only your group’s one or two leaders, who decide what (if anything) to share with the group.</small></span></label>
-<label><input type=radio name=who value=elders><span class=ic>🛡️</span><span><b>Elders</b><small>The elder team only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
-<label><input type=radio name=who value=pastors><span class=ic>🙏</span><span><b>Pastors</b><small>The pastoral staff only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
-</div></fieldset>
+<label><input type=radio name=who value=family><span class=ic>⛪</span><span><b>Our church family</b><small>Our prayer team reads it first. It goes on the prayer wall only after they say OK.</small></span></label>
+<label><input type=radio name=who value=group><span class=ic>📖</span><span><b>My small group leaders</b><small>Only your group leaders see it. They decide what to share with the group.</small></span></label>
+<label><input type=radio name=who value=elders><span class=ic>🛡️</span><span><b>Elders</b><small>Only the elders see it. It never goes on the wall.</small><span class=conf>🔒 Private</span></span></label>
+<label><input type=radio name=who value=pastors><span class=ic>🙏</span><span><b>Pastors</b><small>Only our pastors see it. It never goes on the wall.</small><span class=conf>🔒 Private</span></span></label>
+</div><div id=gp hidden style="margin:14px 0 0"><label class=f for=grp>Choose your group</label><select id=grp style="width:100%;font:17px Poppins,system-ui,sans-serif;padding:14px;border:2px solid #d9ddd6;border-radius:14px;background:#fff;min-height:54px"><option value="">Choose your group</option><option value="1823-a-community-for-18-23-year-olds">1823: A Community For 18-23 Year Olds</option><option value="christ-s-ambassadors-at-westwood">Christ&#x27;s Ambassadors at Westwood</option><option value="connections">Connections</option><option value="family-builders-at-westwood">Family Builders at Westwood</option><option value="good-soil-group-in-west-olympia">Good Soil Group in West Olympia</option><option value="grace-and-grit-at-westwood">Grace and Grit at Westwood</option><option value="growing-families-at-westwood">Growing Families at Westwood</option><option value="hospitality-team">Hospitality Team</option><option value="lydia-s-house-at-westwood">Lydia&#x27;s House at Westwood</option><option value="mission-s-team">Mission&#x27;s Team</option><option value="next-gen-serving">Next Gen Serving</option><option value="next-steps-team">Next Steps Team</option><option value="our-plan-his-purpose-in-rochester">Our Plan, His Purpose in Rochester</option><option value="plumb-line-at-westwood">Plumb Line at Westwood</option><option value="solid-ground-at-westwood">Solid Ground at Westwood</option><option value="steamboat-island-group">Steamboat Island Group</option><option value="the-33-series-authentic-manhood">The 33 Series: Authentic Manhood</option><option value="the-forge-a-men-s-group-at-westwood">The Forge (a Men&#x27;s Group)  at Westwood</option></select><p id=gsel class=meta style="margin:8px 0 0"></p></div></fieldset>
 <p class=err id=e></p>
 <label class=tog><input type=checkbox id=reach> Would you like someone to reach out?</label>
 <button class=btn>Share my request</button>
-<div class=crisis>If you’re in crisis, call or text <b>988</b>, or call a pastor now.</div>
+<div class=crisis>In crisis? Call or text <b>988</b> now, or call a pastor.</div>
 </form>
-<div class=ok id=ok><div class=big>🕊️</div><h2 style="margin-top:6px">Thank you. We’re praying.</h2><p id=okmsg></p><p class=meta>(Mock-up: nothing was actually sent.)</p><button class=btn id=again>Share another request</button></div>
+<div class=ok id=ok><div class=big>🕊️</div><h2 class=w style="margin-top:6px">Thank you. We’re praying.</h2><p id=okmsg></p><p class=meta>(This is a practice page. Nothing was sent.)</p><button class=btn id=again>Share another request</button></div>
 </div>
-<h2>Prayer wall preview: Approved requests</h2>
-<p class=meta>Only requests a prayer team member or staff has approved appear here.</p>
+<h2 class=w id=wall-top>Prayer Wall</h2>
+<p class=meta>You will only see requests our prayer team has OK’d. Tap “I prayed” to let them know.</p>
 <p><span class=sample>Sample data</span> <span class=meta>These are made-up examples, not real requests.</span></p>
-<p class=note>Requests that haven’t been prayed for yet appear first.</p>
+<p class=note>Requests no one has prayed for yet show first.</p>
 <div id=wall></div>
-</main>
-<footer>Draft mock-up. Not connected to anything. Sample data only.</footer>
-<script>
-const W={family:'the prayer team for review. It will appear on the wall once approved',group:'your small group leaders only. They’ll decide what, if anything, to share with the group',elders:'the elder team only — confidential, never shown on the wall',pastors:'the pastoral staff only — confidential, never shown on the wall'};
+<p class=practice>This is a practice page. Nothing is sent yet.</p></main><footer class=wwf><p class=big>Love God. Love People. Make Disciples.</p><p>Westwood Baptist Church · 333 Kaiser Rd NW, Olympia · Sundays 10:30am · <a href="https://westwoodbaptist.com/plan-a-visit-on-campus">Plan a visit</a> · <a href="/westwood/groups/">Small groups</a> · <a href="mailto:info@westwoodbaptist.com">info@westwoodbaptist.com</a></p><p style="font-size:12px;opacity:.7">Only Westwood sermons and the ESV Bible. Scripture quotations are from the ESV® Bible, © 2001 by Crossway.</p></footer><script>
+const W={family:'our prayer team. It goes on the wall after they say OK',group:'your group leaders only. They decide what to share',elders:'the elders only. It stays private',pastors:'our pastors only. It stays private'};
 const $=s=>document.querySelector(s);
 $('#anon').onchange=e=>{$('#nm').disabled=e.target.checked};
 $('#f').onsubmit=e=>{e.preventDefault();const w=document.querySelector('input[name=who]:checked'),r=$('#req').value.trim(),er=$('#e');
@@ -83,4 +97,4 @@ const S=[{n:'Pastor team',t:'Join us in praying for our fall outreach at the Oly
 function draw(){const L=[...S].sort((a,b)=>(b.pin||0)-(a.pin||0)||(a.c>0)-(b.c>0));
 $('#wall').innerHTML=L.map(p=>`<div class="pr${p.pin?' pin':''}">${p.pin?'<div class=pin-tag>📌 Pinned by a leader</div>':''}<span class=sample>Sample</span><p>${p.t}</p><div class=row><span class="meta ${p.c?'':'zero'}">${p.n} · Prayed for ${p.c} time${p.c==1?'':'s'}</span><button class="${p.d?'done':''}" data-i=${S.indexOf(p)}>🙏 I prayed</button></div></div>`).join('')}
 $('#wall').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=S[b.dataset.i];p.c++;p.d=1;draw()};draw();
-</script></body></html>
+</script><script>(()=>{const g=document.getElementById("grp"),gp=document.getElementById("gp"),o=document.getElementById("gsel");function show(){const v=g.value;o.innerHTML=v?"Your group: <b>"+g.options[g.selectedIndex].text.replace(/[<&]/g,"")+"</b> · <a href=\"/westwood/groups/"+v+"/\">See your group</a>":""}try{const s=localStorage.getItem("wwGroup");if(s&&[...g.options].some(x=>x.value===s))g.value=s}catch(e){}show();g.onchange=()=>{try{localStorage.setItem("wwGroup",g.value)}catch(e){}show()};document.querySelectorAll("input[name=who]").forEach(r=>r.addEventListener("change",()=>{gp.hidden=!(r.checked&&r.value==="group")}))})()</script></body></html>

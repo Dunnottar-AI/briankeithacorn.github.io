@@ -1,0 +1,17 @@
+{
+ "name": "Westwood Baptist Church",
+ "short_name": "Westwood",
+ "start_url": "/westwood/",
+ "scope": "/westwood/",
+ "display": "standalone",
+ "background_color": "#f7f8f5",
+ "theme_color": "#262b28",
+ "icons": [
+  {
+   "src": "/westwood/img/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}

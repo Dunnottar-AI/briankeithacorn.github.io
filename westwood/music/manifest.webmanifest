@@ -1,0 +1,19 @@
+{
+ "name": "Westwood Worship",
+ "short_name": "Westwood Worship",
+ "description": "Worship songs sung by the Westwood Baptist Church worship team.",
+ "id": "/westwood/music/",
+ "start_url": "/westwood/music/",
+ "scope": "/westwood/music/",
+ "display": "standalone",
+ "background_color": "#f7f8f5",
+ "theme_color": "#262b28",
+ "icons": [
+  {
+   "src": "/westwood/music/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}

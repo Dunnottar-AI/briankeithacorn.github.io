@@ -1,0 +1,84 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content=noindex>
+<title>Share a prayer request · Westwood Baptist Church</title><style>:root{--ink:#2b2622;--muted:#7a6f66;--bg:#fbf8f3;--card:#fff;--accent:#8a5a3b;--soft:#f1e9df}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,'Iowan Old Style',serif}
+header{background:linear-gradient(160deg,#5b3a29,#8a5a3b);color:#fff;padding:44px 20px 36px;text-align:center}
+header .kicker{font:600 12px/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+header h1{font-size:clamp(28px,6vw,44px);margin:10px 0 8px;font-weight:normal}header p{margin:0 auto;max-width:560px;opacity:.92;font-size:16px}
+main{max-width:760px;margin:0 auto;padding:8px 18px 40px}h2{font-weight:normal;font-size:24px;margin:36px 0 10px;color:var(--accent)}
+h3{font:600 13px/1.3 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 8px}
+.meta{color:var(--muted);font:14px/1.5 system-ui,sans-serif}
+footer{max-width:760px;margin:0 auto;padding:22px 18px 50px;color:var(--muted);font:13px/1.6 system-ui,sans-serif;border-top:1px solid #e6dccf}
+.panel{background:var(--card);border-radius:16px;padding:18px 20px;box-shadow:0 2px 14px rgba(60,40,20,.07)}
+label.f{display:block;font:600 14px system-ui,sans-serif;margin:14px 0 6px}
+input[type=text],textarea{width:100%;font:16px Georgia,serif;padding:10px 12px;border:1px solid #d9cbbb;border-radius:10px;background:#fffdf9;color:var(--ink)}
+textarea{min-height:120px}input:disabled{opacity:.5}
+.tog{display:flex;align-items:center;gap:10px;font:15px system-ui,sans-serif;margin:10px 0;cursor:pointer}.tog input{width:20px;height:20px;accent-color:var(--accent)}
+fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px system-ui,sans-serif;padding:0}legend .req{color:#a33}
+.who{display:grid;gap:10px;margin-top:8px}@media(min-width:600px){.who{grid-template-columns:1fr 1fr}}
+.who label{display:flex;gap:12px;align-items:flex-start;border:2px solid #e6dccf;border-radius:14px;padding:12px 14px;cursor:pointer;background:#fffdf9}
+.who input{position:absolute;opacity:0}.who .ic{font-size:26px;line-height:1}.who b{display:block;font-weight:normal;font-size:18px}
+.who small{display:block;color:var(--muted);font:13.5px/1.4 system-ui,sans-serif}
+.who label:has(input:checked){border-color:var(--accent);background:var(--soft)}.who label:has(input:focus-visible){outline:3px solid #c9a27f}
+.conf{display:inline-block;margin-top:4px;background:#5b3a29;color:#fff;font:600 11px system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:10px}
+.btn{display:block;width:100%;margin-top:18px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:14px;font:600 17px system-ui,sans-serif;cursor:pointer}
+.err{color:#a33;font:14px system-ui,sans-serif;display:none}
+.crisis{margin-top:14px;background:#fdf1ec;border-left:4px solid #b4532a;padding:10px 12px;border-radius:8px;font:14px/1.5 system-ui,sans-serif}
+.ok{display:none;text-align:center}.ok .big{font-size:40px}
+.note{background:var(--soft);border-radius:10px;padding:8px 12px;font:14px system-ui,sans-serif;color:var(--accent)}
+.sample{display:inline-block;background:#fff3c4;color:#7a5b00;font:700 11px system-ui,sans-serif;letter-spacing:.08em;padding:3px 8px;border-radius:8px;text-transform:uppercase}
+.pr{background:var(--card);border-radius:14px;padding:14px 18px;margin:12px 0;box-shadow:0 2px 14px rgba(60,40,20,.07);position:relative}
+.pr.pin{border:2px solid var(--accent)}.pr p{margin:6px 0 10px}.pr .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pr button{background:var(--soft);color:var(--accent);border:0;border-radius:20px;padding:8px 14px;font:600 14px system-ui,sans-serif;cursor:pointer}
+.pr button.done{background:var(--accent);color:#fff}.pin-tag{font:600 12px system-ui,sans-serif;color:var(--accent)}
+.zero{color:#b4532a;font-weight:600}</style></head><body>
+<header><div class=kicker>Westwood Baptist Church · Olympia</div><h1>Share a prayer request</h1><p>“Carry each other’s burdens.” — Galatians 6:2. Tell us how we can pray for you.</p></header>
+<main>
+<div class=panel>
+<form id=f novalidate>
+<label class=f for=nm>Your name <span class=meta>(optional)</span></label>
+<input type=text id=nm autocomplete=name placeholder="e.g. Jane">
+<label class=tog><input type=checkbox id=anon> Share anonymously</label>
+<label class=f for=req>Your prayer request</label>
+<textarea id=req required placeholder="What would you like prayer for?"></textarea>
+<fieldset><legend>Who should see this? <span class=req>(required)</span></legend>
+<div class=who>
+<label><input type=radio name=who value=family><span class=ic>⛪</span><span><b>Our church family</b><small>Shared on the whole congregation’s prayer wall.</small></span></label>
+<label><input type=radio name=who value=group><span class=ic>📖</span><span><b>My small group</b><small>Only your Bible study group and its leaders.</small></span></label>
+<label><input type=radio name=who value=elders><span class=ic>🛡️</span><span><b>Elders</b><small>The elder team only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
+<label><input type=radio name=who value=pastors><span class=ic>🙏</span><span><b>Pastors</b><small>The pastoral staff only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
+</div></fieldset>
+<p class=err id=e></p>
+<label class=tog><input type=checkbox id=reach> Would you like someone to reach out?</label>
+<button class=btn>Share my request</button>
+<div class=crisis>If you’re in crisis, call or text <b>988</b>, or call a pastor now.</div>
+</form>
+<div class=ok id=ok><div class=big>🕊️</div><h2 style="margin-top:6px">Thank you. We’re praying.</h2><p id=okmsg></p><p class=meta>(Mock-up: nothing was actually sent.)</p><button class=btn id=again>Share another request</button></div>
+</div>
+<h2>Prayer wall preview</h2>
+<p><span class=sample>Sample data</span> <span class=meta>These are made-up examples, not real requests.</span></p>
+<p class=note>Requests that haven’t been prayed for yet appear first.</p>
+<div id=wall></div>
+</main>
+<footer>Draft mock-up. Not connected to anything. Sample data only.</footer>
+<script>
+const W={family:'our church family’s prayer wall',group:'your small group and its leaders only',elders:'the elder team only — confidential, never shown on the wall',pastors:'the pastoral staff only — confidential, never shown on the wall'};
+const $=s=>document.querySelector(s);
+$('#anon').onchange=e=>{$('#nm').disabled=e.target.checked};
+$('#f').onsubmit=e=>{e.preventDefault();const w=document.querySelector('input[name=who]:checked'),r=$('#req').value.trim(),er=$('#e');
+if(!r||!w){er.textContent=!r?'Please write your request.':'Please choose who should see it.';er.style.display='block';return}
+er.style.display='none';const n=$('#anon').checked||!$('#nm').value.trim()?'anonymously':'as '+$('#nm').value.trim();
+$('#okmsg').innerHTML='Your request was shared '+n.replace(/[<&]/g,'')+' with <b>'+W[w.value]+'</b>.'+($('#reach').checked?' Someone will reach out to you soon.':'');
+$('#f').style.display='none';$('#ok').style.display='block'};
+$('#again').onclick=()=>{$('#f').reset();$('#nm').disabled=false;$('#ok').style.display='none';$('#f').style.display='block'};
+const S=[{n:'Pastor team',t:'Join us in praying for our fall outreach at the Olympia food bank this Saturday.',c:12,pin:1},
+{n:'Sample: Anonymous',t:'Example request: prayer for a job interview next week.',c:0},
+{n:'Sample: “Martha”',t:'Example request: healing for my mom after her knee surgery.',c:3},
+{n:'Sample: Anonymous',t:'Example request: peace and wisdom for a hard family conversation.',c:0},
+{n:'Sample: “Dan”',t:'Example request: safe travels for our kids driving home for Thanksgiving.',c:5},
+{n:'Sample: “Grace”',t:'Example request: give thanks with us — a new grandbaby arrived!',c:9},
+{n:'Sample: Anonymous',t:'Example request: strength through a season of grief.',c:0},
+{n:'Sample: “Luis”',t:'Example request: our small group starting a study on James.',c:1}];
+function draw(){const L=[...S].sort((a,b)=>(b.pin||0)-(a.pin||0)||(a.c>0)-(b.c>0));
+$('#wall').innerHTML=L.map(p=>`<div class="pr${p.pin?' pin':''}">${p.pin?'<div class=pin-tag>📌 Pinned by a leader</div>':''}<span class=sample>Sample</span><p>${p.t}</p><div class=row><span class="meta ${p.c?'':'zero'}">${p.n} · Prayed for ${p.c} time${p.c==1?'':'s'}</span><button class="${p.d?'done':''}" data-i=${S.indexOf(p)}>🙏 I prayed</button></div></div>`).join('')}
+$('#wall').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=S[b.dataset.i];p.c++;p.d=1;draw()};draw();
+</script></body></html>

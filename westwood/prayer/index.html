@@ -33,6 +33,7 @@ fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px system-ui,sans-
 .zero{color:#b4532a;font-weight:600}</style></head><body>
 <header><div class=kicker>Westwood Baptist Church · Olympia</div><h1>Share a prayer request</h1><p>“Carry each other’s burdens.” — Galatians 6:2. Tell us how we can pray for you.</p></header>
 <main>
+<p class=note><b>How this works:</b> every request is reviewed by a person. Nothing is shared automatically; the church decides.</p>
 <div class=panel>
 <form id=f novalidate>
 <label class=f for=nm>Your name <span class=meta>(optional)</span></label>
@@ -42,8 +43,8 @@ fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px system-ui,sans-
 <textarea id=req required placeholder="What would you like prayer for?"></textarea>
 <fieldset><legend>Who should see this? <span class=req>(required)</span></legend>
 <div class=who>
-<label><input type=radio name=who value=family><span class=ic>⛪</span><span><b>Our church family</b><small>Shared on the whole congregation’s prayer wall.</small></span></label>
-<label><input type=radio name=who value=group><span class=ic>📖</span><span><b>My small group</b><small>Only your Bible study group and its leaders.</small></span></label>
+<label><input type=radio name=who value=family><span class=ic>⛪</span><span><b>Our church family</b><small>Sent to the prayer team for review. It appears on the congregation’s prayer wall only once approved.</small></span></label>
+<label><input type=radio name=who value=group><span class=ic>📖</span><span><b>My small group leaders</b><small>Only your group’s one or two leaders, who decide what (if anything) to share with the group.</small></span></label>
 <label><input type=radio name=who value=elders><span class=ic>🛡️</span><span><b>Elders</b><small>The elder team only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
 <label><input type=radio name=who value=pastors><span class=ic>🙏</span><span><b>Pastors</b><small>The pastoral staff only. Never shown on the wall.</small><span class=conf>🔒 Confidential</span></span></label>
 </div></fieldset>
@@ -54,20 +55,21 @@ fieldset{border:0;padding:0;margin:18px 0 0}legend{font:600 14px system-ui,sans-
 </form>
 <div class=ok id=ok><div class=big>🕊️</div><h2 style="margin-top:6px">Thank you. We’re praying.</h2><p id=okmsg></p><p class=meta>(Mock-up: nothing was actually sent.)</p><button class=btn id=again>Share another request</button></div>
 </div>
-<h2>Prayer wall preview</h2>
+<h2>Prayer wall preview: Approved requests</h2>
+<p class=meta>Only requests a prayer team member or staff has approved appear here.</p>
 <p><span class=sample>Sample data</span> <span class=meta>These are made-up examples, not real requests.</span></p>
 <p class=note>Requests that haven’t been prayed for yet appear first.</p>
 <div id=wall></div>
 </main>
 <footer>Draft mock-up. Not connected to anything. Sample data only.</footer>
 <script>
-const W={family:'our church family’s prayer wall',group:'your small group and its leaders only',elders:'the elder team only — confidential, never shown on the wall',pastors:'the pastoral staff only — confidential, never shown on the wall'};
+const W={family:'the prayer team for review. It will appear on the wall once approved',group:'your small group leaders only. They’ll decide what, if anything, to share with the group',elders:'the elder team only — confidential, never shown on the wall',pastors:'the pastoral staff only — confidential, never shown on the wall'};
 const $=s=>document.querySelector(s);
 $('#anon').onchange=e=>{$('#nm').disabled=e.target.checked};
 $('#f').onsubmit=e=>{e.preventDefault();const w=document.querySelector('input[name=who]:checked'),r=$('#req').value.trim(),er=$('#e');
 if(!r||!w){er.textContent=!r?'Please write your request.':'Please choose who should see it.';er.style.display='block';return}
 er.style.display='none';const n=$('#anon').checked||!$('#nm').value.trim()?'anonymously':'as '+$('#nm').value.trim();
-$('#okmsg').innerHTML='Your request was shared '+n.replace(/[<&]/g,'')+' with <b>'+W[w.value]+'</b>.'+($('#reach').checked?' Someone will reach out to you soon.':'');
+$('#okmsg').innerHTML='Your request was sent '+n.replace(/[<&]/g,'')+' to '+W[w.value]+'.'+($('#reach').checked?' Someone will reach out to you soon.':'');
 $('#f').style.display='none';$('#ok').style.display='block'};
 $('#again').onclick=()=>{$('#f').reset();$('#nm').disabled=false;$('#ok').style.display='none';$('#f').style.display='block'};
 const S=[{n:'Pastor team',t:'Join us in praying for our fall outreach at the Olympia food bank this Saturday.',c:12,pin:1},

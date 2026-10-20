@@ -1,0 +1,39 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Ask A Question · Reformation Presbyterian Church</title>
+<link rel=manifest href="/rop/manifest.webmanifest"><meta name=theme-color content="#272727"><link rel=icon href="/rop/img/icon.svg" type="image/svg+xml"><link rel=apple-touch-icon href="/rop/img/icon.svg"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-title content="Reformation"><style>:root{--blue:#4b53a6;--ink:#272727;--muted:#5f6270;--bg:#f6f6f9;--soft:#e7e8f4}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Helvetica Neue",Arial,sans-serif}
+nav.top{position:sticky;top:0;z-index:50;background:#272727;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;justify-content:center;padding:8px 12px;font-size:14px}
+nav.top a{color:#e9eaf3;text-decoration:none}nav.top a.cur{color:#fff;font-weight:700;border-bottom:2px solid #9aa1e0}
+nav.top .brand{display:flex;align-items:center;gap:8px;font-weight:700;color:#fff;margin-right:8px}nav.top .brand img{height:20px}
+header.band{background:linear-gradient(90deg,rgba(30,33,70,1) 0%,rgba(30,33,70,.9) 40%,rgba(30,33,70,.45) 100%),url(/rop/img/hero.svg) right 30%/auto 100% no-repeat,#1e2146;color:#fff;padding:56px 20px}
+header.band h1{margin:0 auto;max-width:880px;font:700 34px/1.2 Georgia,"Times New Roman",serif}
+main{max-width:880px;margin:0 auto;padding:22px 18px 40px}h2{font:700 24px Georgia,serif;margin:28px 0 10px}
+a{color:var(--blue)}.meta{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:18px 0}
+.card{display:block;background:#fff;border:1px solid #dfe0ea;border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink)}
+.card b{display:block;font:700 19px Georgia,serif;color:var(--blue);margin-bottom:2px}.card span{font-size:15px;color:var(--muted)}
+.quote{background:#fff;border-left:4px solid var(--blue);border-radius:10px;padding:12px 16px;margin:14px 0}.quote p{margin:0 0 6px}
+.btn{display:inline-block;background:var(--blue);color:#fff;border-radius:999px;padding:8px 16px;text-decoration:none;font-weight:600;font-size:15px}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;margin:10px 0}.vid iframe,.vid>div{position:absolute;inset:0;width:100%;height:100%;border:0}
+ul.list{list-style:none;padding:0}ul.list li{background:#fff;border:1px solid #e3e4ee;border-radius:10px;padding:10px 14px;margin:8px 0}
+footer{text-align:center;padding:26px 16px;color:var(--muted);font-size:14px;border-top:1px solid #e1e2ea}footer a{margin:0 8px}
+form.ask{display:flex;max-width:600px;margin:18px 0}form.ask input{flex:1;font-size:18px;padding:12px 16px;border:1px solid #c9cbe0;border-radius:999px 0 0 999px}form.ask button{border:0;background:var(--blue);color:#fff;font-weight:700;padding:0 20px;border-radius:0 999px 999px 0;font-size:16px}
+mark{background:#e3e5ff}
+@media(max-width:640px){header.band{padding:30px 16px;background-size:auto 100%;background-position:right 35%}header.band h1{font-size:27px}nav.top{font-size:13px;gap:2px 12px}nav.top .brand{flex:1 1 100%;justify-content:center}}
+</style></head>
+<body><nav class=top aria-label=Site><a class=brand href="/rop/"><img src="/rop/img/logo.svg" alt="">Reformation Presbyterian Church</a><a href="/rop/">Home</a><a href="/rop/search/" class=cur>Ask A Question</a><a href="/rop/sermons/">Sermons</a><a href="/rop/scripture/">Scripture</a><a href="/rop/pray/">Pray</a><a href="https://www.ropcolympia.org/">Church website ↗</a></nav><header class=band><h1>Ask A Question</h1></header><main><form class=ask action="/rop/search/"><input id=qi name=q placeholder="Ask anything…" aria-label="Your question"><button>Ask</button></form><div id=res><p>Type a question or a few words. We will look through 51 recent sermons and take you to the exact moment.</p><div class=cards><a class=card href="/rop/questions/who-is-jesus/"><b>Who is Jesus?</b></a><a class=card href="/rop/questions/good-news/"><b>What is the good news?</b></a><a class=card href="/rop/questions/grace/"><b>What is grace?</b></a><a class=card href="/rop/questions/faith/"><b>What does it mean to have faith?</b></a><a class=card href="/rop/questions/how-to-pray/"><b>How should I pray?</b></a><a class=card href="/rop/questions/worship/"><b>What is worship?</b></a><a class=card href="/rop/questions/church/"><b>Why does the church matter?</b></a><a class=card href="/rop/questions/sin/"><b>What is sin?</b></a></div></div><script>
+const P=new URLSearchParams(location.search),q=(P.get('q')||'').trim(),o=document.getElementById('res');document.getElementById('qi').value=q;
+const stop=new Set('a an and the is are of to in on for what how why who do does i my me we our you your can be it this that with about when where god'.split(' '));
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function fmt(t){return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
+if(q){o.innerHTML='<p class=meta>Searching…</p>';Promise.all([fetch('index.json').then(r=>r.json()),fetch('q.json').then(r=>r.json())]).then(([D,Q])=>{
+ let terms=q.toLowerCase().replace(/[^a-z0-9' ]/g,' ').split(/\s+/).filter(w=>w&&!stop.has(w));if(!terms.length)terms=q.toLowerCase().split(/\s+/);
+ const ql=Q.filter(([s,t])=>terms.some(w=>t.toLowerCase().includes(w))).slice(0,4);
+ let hits=[];D.l.forEach((L,k)=>{const ctx=(L[2]+' '+((D.l[k+1]||[])[0]===L[0]?D.l[k+1][2]:'')).toLowerCase();let n=0;terms.forEach(w=>{if(ctx.includes(w))n+=L[2].toLowerCase().includes(w)?2:1});if(n)hits.push([n,k])});
+ hits.sort((a,b)=>b[0]-a[0]||a[1]-b[1]);const per={};const res=[];for(const [n,k] of hits){const s=D.l[k][0];if((per[s]=(per[s]||0)+1)>2)continue;res.push(k);if(res.length>=25)break}
+ const re=new RegExp('('+terms.map(w=>w.replace(/[^a-z0-9']/g,'')).filter(Boolean).join('|')+')','gi');
+ let h='';if(ql.length)h+='<h2>Big questions</h2><div class=cards>'+ql.map(([s,t])=>`<a class=card href="/rop/questions/${s}/"><b>${esc(t)}</b><span>Hear the answer</span></a>`).join('')+'</div>';
+ h+=`<h2>In the sermons</h2><p class=meta>${res.length?'Tap a line to watch from that exact second.':'No matches. Try other words.'}</p>`;
+ h+=res.map(k=>{const L=D.l[k],s=D.s[L[0]],nx=(D.l[k+1]||[])[0]===L[0]?D.l[k+1][2]:'';return `<div class=quote><p><a style="color:inherit;text-decoration:none" href="https://www.youtube.com/watch?v=${s[0]}&t=${L[1]}s">“${esc(L[2]+' '+nx).replace(re,'<mark>$1</mark>')}”</a></p><div class=meta>${esc(s[2])} · <b>${esc(s[1])}</b> · ${s[3]} · <a href="https://www.youtube.com/watch?v=${s[0]}&t=${L[1]}s">Watch at ${fmt(L[1])} →</a></div></div>`}).join('');o.innerHTML=h})}
+</script></main>
+<footer><a href="https://www.ropcolympia.org/what-to-expect">Visit</a>·<a href="https://www.ropcolympia.org/contact">Give</a>·<a href="https://www.ropcolympia.org/contact">Contact</a>·<a href="https://www.ropcolympia.org/calendar">Events</a><br>Made from Reformation Presbyterian Church's sermons on YouTube. Scripture links go to the ESV.<br>Words come from YouTube's auto captions, so a few may be off.</footer>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/rop/sw.js')</script></body></html>

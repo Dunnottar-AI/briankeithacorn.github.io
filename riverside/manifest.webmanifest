@@ -1,0 +1,18 @@
+{
+ "name": "Riverside Study",
+ "short_name": "Study",
+ "id": "/riverside/",
+ "start_url": "/riverside/",
+ "scope": "/riverside/",
+ "display": "standalone",
+ "background_color": "#f6f7f6",
+ "theme_color": "#111111",
+ "icons": [
+  {
+   "src": "/riverside/img/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}

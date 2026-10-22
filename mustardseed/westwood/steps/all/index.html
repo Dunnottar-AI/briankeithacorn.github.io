@@ -41,7 +41,7 @@ window.msImage=function(i){var m=MS[i],W=1080,H=1350,c=document.createElement('c
  x.fillStyle='#f3f7ee';x.fillRect(0,0,W,H);x.textAlign='center';x.font='260px serif';x.fillText(m[0],W/2,520);
  x.fillStyle='#3b6e2a';x.font='bold 84px Georgia,serif';x.fillText(m[1]+'.',W/2,700);
  x.fillStyle='#262b28';x.font='48px system-ui,sans-serif';x.fillText(m[2],W/2,800);x.fillText(ALL+' steps',W/2,880);
- x.fillStyle='#535a54';x.font='36px system-ui,sans-serif';x.fillText('From '+CH,W/2,H-180);x.fillText('on Mustard Seed',W/2,H-130);
+ x.fillStyle='#535a54';x.font='36px system-ui,sans-serif';x.fillText('From '+CH,W/2,H-180);x.fillText('Powered by Mustard Seed',W/2,H-130);
  if(D.exampleLog){x.fillStyle='#8a5a00';x.font='bold 28px system-ui';x.fillText('EXAMPLE',W/2,70)}return c};
 document.querySelectorAll('[data-ms]').forEach(function(b){b.onclick=function(){msImage(+b.dataset.ms).toBlob(function(bl){var f=new File([bl],'milestone.png',{type:'image/png'});
  if(navigator.canShare&&navigator.canShare({files:[f]}))navigator.share({files:[f],text:'I reached a milestone on Mustard Seed.'}).catch(function(){});
@@ -107,7 +107,7 @@ document.body.appendChild(n);
  function back(){var same=document.referrer&&document.referrer.indexOf(location.origin+B)===0;if(history.length>1&&(same||/^#\/./.test(location.hash)))history.back();else location.href=TABS[cur]&&!root?TABS[cur][0]:B+'/'}
  function paint(){var x=document.getElementById('oa-back'),need=!root||/^#\/./.test(location.hash);if(need&&!x){x=document.createElement('button');x.id='oa-back';x.type='button';x.setAttribute('aria-label','Back');x.innerHTML='<svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true><path d="M15 5l-7 7 7 7" fill=none stroke=currentColor stroke-width=2.4 stroke-linecap=round stroke-linejoin=round /></svg>';x.onclick=back;document.body.appendChild(x);document.body.classList.add('oa-hasback')}else if(!need&&x){x.remove();document.body.classList.remove('oa-hasback')}}
  paint();window.addEventListener('hashchange',paint);window.addEventListener('popstate',paint);
- var sx=null,sy=0;document.addEventListener('touchstart',function(e){var t=e.touches[0];sx=t.clientX<=24?t.clientX:null;sy=t.clientY},{passive:true});
+ var sx=null,sy=0;document.addEventListener('touchstart',function(e){var t=e.touches[0];sx=t.clientX<=24&&!(e.target.closest&&e.target.closest('.shc,[data-noswipe]'))?t.clientX:null;sy=t.clientY},{passive:true});
  document.addEventListener('touchend',function(e){if(sx==null)return;var t=e.changedTouches[0];if(t.clientX-sx>60&&Math.abs(t.clientY-sy)<80&&document.getElementById('oa-back'))back();sx=null},{passive:true})})();
 // policy: no outside links (YouTube plays inside the app)
 document.querySelectorAll('a[href^="http"]').forEach(function(a){try{if(a.hasAttribute('data-church'))return;var u=new URL(a.href);if(u.host!==location.host&&!/(^|\.)youtube\.com$|youtu\.be$/.test(u.hostname))a.style.display='none'}catch(e){}});

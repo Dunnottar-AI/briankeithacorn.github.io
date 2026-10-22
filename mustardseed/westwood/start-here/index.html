@@ -1,0 +1,60 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Westwood Baptist Church · Westwood Baptist on Mustard Seed</title><meta http-equiv=refresh content="0; url=/mustardseed/westwood/"><link rel=canonical href="https://briankeithacorn.github.io/mustardseed/westwood/"><meta name=robots content=noindex><meta name=apple-mobile-web-app-title content="Mustard Seed"><meta name=application-name content="Mustard Seed"><style id=oneapp-css>:root{--oa-ink:#262b28;--oa-acc:#7ccf5a;--oa-accd:#3b6e2a}body{padding-bottom:calc(70px + env(safe-area-inset-bottom))!important}nav.wwnav,.wwnav{display:none!important}.oa-tabs{position:fixed;left:0;right:0;bottom:0;z-index:10000;display:flex;background:#fff;border-top:1px solid #e3e6e1;padding:6px 4px calc(6px + env(safe-area-inset-bottom));font:600 12px system-ui,-apple-system,sans-serif}.oa-tabs a{flex:1;min-height:48px;justify-content:center;display:flex;flex-direction:column;align-items:center;gap:3px;color:#6b726c;text-decoration:none;padding:4px 0}.oa-tabs a.on{color:var(--oa-accd)}.oa-tabs svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.oa-tabs a.on svg{stroke-width:2.4}#bar,#wwsheet{bottom:calc(62px + env(safe-area-inset-bottom))!important}.oa-save{margin:8px 0 0;border:1px solid #cfd5cd;background:#fff;border-radius:999px;padding:10px 16px;min-height:44px;font:600 15px system-ui,sans-serif;color:var(--oa-ink);cursor:pointer}a.cite{display:inline-flex!important;align-items:center;justify-content:center;min-width:30px;min-height:30px;font-size:14px!important;margin:2px}.svc button,.dates button{min-height:44px}.row .pl{min-width:44px!important;min-height:44px!important}.row a.x{min-height:44px}#pray-along button{min-height:44px}article.clip a.watch{display:inline-flex!important;align-items:center;min-height:44px;padding:0 16px!important;border-radius:999px;margin-right:6px;text-decoration:none}.chip{min-height:44px;display:inline-flex!important;align-items:center}:focus-visible{outline:3px solid var(--oa-accd)!important;outline-offset:2px}.oa-save.on{background:var(--oa-ink);color:#fff;border-color:var(--oa-ink)}</style></head><body><p><a href="/mustardseed/westwood/">Continue to Westwood</a></p><script>(function(){if(window.__oa)return;window.__oa=1;
+var B='/mustardseed/westwood',TABS=[["/mustardseed/westwood/", "Today", "M3 11l9-8 9 8v10h-6v-6H9v6H3z"], ["/mustardseed/westwood/sermons/", "Sermons", "M4 5h16v11H4zM8 20h8M12 16v4"], ["/mustardseed/westwood/worship/", "Worship", "M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"], ["/mustardseed/westwood/pray/", "Pray", "M12 21s-7-4.5-9-9.5C1.5 7 5 3 8.5 4.5 10 5 11 6 12 7.5 13 6 14 5 15.5 4.5 19 3 22.5 7 21 11.5 19 16.5 12 21 12 21z"], ["/mustardseed/westwood/me/", "Saved", "M6 3h12v18l-6-4-6 4z"]],K='oa:'+B,P=location.pathname;
+function g(){try{return JSON.parse(localStorage.getItem(K))||{}}catch(e){return {}}}
+function s(d){try{localStorage.setItem(K,JSON.stringify(d))}catch(e){}}
+// one-time migration: 'leaves' -> 'steps' (daily done-map moves to 'done')
+function MIG(d){var c=0;if(d.steps&&typeof d.steps==='object'){d.done=d.done||d.steps;d.steps=0;c=1}if('leaves' in d){d.steps=+d.leaves||0;delete d.leaves;c=1}return c}
+var D=g();if(MIG(D))s(D);D.saved=D.saved||[];D.int=D.int||{};D.recent=D.recent||[];
+if(D.kids)document.documentElement.classList.add('kids'),document.body&&document.body.classList.add('kids');
+// tab bar
+var cur=P===B+'/'||P===B?0:-1;TABS.forEach(function(t,i){if(i&&P.indexOf(t[0])===0)cur=i});if(P.indexOf(B+'/steps/')===0)TABS.forEach(function(t,i){if(t[0]===B+'/me/')cur=i});if(cur<0)cur=1;
+var n=document.createElement('nav');n.className='oa-tabs';n.setAttribute('aria-label','App');
+n.innerHTML=TABS.map(function(t,i){return '<a href="'+t[0]+'"'+(i===cur?' class=on aria-current=page':'')+'><svg viewBox="0 0 24 24"><path d="'+t[2]+'"/></svg>'+t[1]+'</a>'}).join('');
+document.body.appendChild(n);
+// policy: no outside links (YouTube plays inside the app)
+document.querySelectorAll('a[href^="http"]').forEach(function(a){try{var u=new URL(a.href);if(u.host!==location.host&&!/(^|\.)youtube\.com$|youtu\.be$/.test(u.hostname))a.style.display='none'}catch(e){}});
+var h1=(document.querySelector('h1')||{}).textContent||document.title;h1=h1.trim();
+var slug=P.slice(B.length+1).replace(/\/$/,'');
+// interests: topic pages are the ones with clips
+if(document.querySelector('article.clip')&&slug){D.int[slug]=(D.int[slug]||0)+1;D.titles=D.titles||{};D.titles[slug]=h1}
+if(cur===1&&slug&&slug!=='sermons'){D.recent=[{u:P,t:h1,ts:Date.now()}].concat(D.recent.filter(function(r){return r.u!==P})).slice(0,8)}
+s(D);
+// continue where you left off: last clip/sermon video tapped
+document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a[href*="youtube.com/watch"],a[href*="youtu.be"]');if(!a||a.dataset.do||a.dataset.hear)return;
+ var art=a.closest('article'),q=art&&art.querySelector('blockquote');var d=g();
+ d.cont={k:'clip',u:a.href,page:P,t:h1,q:q?q.textContent.slice(0,140):'',ts:Date.now()};s(d)},true);
+// save buttons on clips
+function isSaved(id){return g().saved.some(function(x){return x.id===id})}
+function toggle(item,btn){var d=g();d.saved=d.saved||[];var i=d.saved.findIndex(function(x){return x.id===item.id});
+ if(i>=0)d.saved.splice(i,1);else d.saved.unshift(Object.assign({ts:Date.now()},item));s(d);paint(btn,i<0)}
+function paint(b,on){b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');b.textContent=on?'★ Saved':'☆ Save'}
+document.querySelectorAll('article.clip').forEach(function(art){var w=art.querySelector('a.watch')||art.querySelector('a[href*="youtube"]');if(!w)return;
+ var id='clip:'+P+'#'+art.id,b=document.createElement('button');b.className='oa-save';paint(b,isSaved(id));
+ var q=(art.querySelector('blockquote')||{}).textContent||'';
+ b.onclick=function(){toggle({id:id,k:'clip',u:P+'#'+art.id,t:h1,q:q.slice(0,160)},b)};(art.querySelector('.body')||art).appendChild(b)});
+// worship: remember last song, add save on song page
+if(cur===2){function song(){var m=location.hash.match(/^#\/song\/(.+)/);if(!m)return;setTimeout(function(){
+  var t=(document.querySelector('#view h1,#view h2')||{}).textContent||m[1];var d=g();d.cont={k:'song',u:P+location.hash,t:t,ts:Date.now()};s(d);
+  var v=document.querySelector('#view article')||document.getElementById('view');if(!v||v.querySelector('.oa-save'))return;
+  var id='song:'+m[1],b=document.createElement('button');b.className='oa-save';paint(b,isSaved(id));b.onclick=function(){toggle({id:id,k:'song',u:P+location.hash,t:t},b)};
+  var h=v.querySelector('h1,h2');h?h.insertAdjacentElement('afterend',b):v.prepend(b)},400)}
+ window.addEventListener('hashchange',song);song()}
+})();
+
+/* Mustard Seed anonymous counts (DEMO). Counts only: church_id + date + event -> number. No IDs, no text, no network send in this prototype. */
+(function(){var CID='westwood',KEY='oa-an:'+CID,B='/mustardseed/westwood';
+function day(){return new Date().toLocaleDateString('en-CA')}
+function add(ev,n){try{var q=JSON.parse(localStorage.getItem(KEY)||'{}'),d=day();q[d]=q[d]||{};q[d][ev]=(q[d][ev]||0)+(n||1);
+ var ks=Object.keys(q).sort();while(ks.length>14)delete q[ks.shift()];localStorage.setItem(KEY,JSON.stringify(q))}catch(e){}}
+window.msCount=add;
+(function(){var d=day();if(localStorage.getItem(KEY+':act')!==d){localStorage.setItem(KEY+':act',d);add('active_day')}var w=new Date();w.setDate(w.getDate()-w.getDay());w=w.toLocaleDateString('en-CA');if(localStorage.getItem(KEY+':actw')!==w){localStorage.setItem(KEY+':actw',w);add('active_week')}})();
+if(!sessionStorage.getItem('an-open')){sessionStorage.setItem('an-open',1);add('app_open');
+ if(matchMedia('(display-mode: standalone)').matches&&!localStorage.getItem(KEY+':inst')){localStorage.setItem(KEY+':inst',1);var src=(new URLSearchParams(location.search).get('src')||'direct').replace(/[^a-z0-9_]/gi,'').slice(0,20);add('install_'+src)}}
+document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.target.closest('button,a');if(!t)return;
+ if(t.dataset.do)add('step_'+t.dataset.do);if(t.dataset.hear)add('pastor_question_heard');
+ var m={sharev:'verse_share',nshare:'note_shared',ngroup:'note_shared_group',gshare:'group_tree_shared',inv:'group_invite'};if(m[t.id])add(m[t.id]);if(t.dataset.ms)add('milestone_shared')},true);
+document.addEventListener('submit',function(ev){if(ev.target.id==='joinf')add('group_join_try')},true);
+document.addEventListener('play',function(ev){var el=ev.target;if(!el||!el.tagName)return;if(el.tagName==='AUDIO')add('song_play');var st=Date.now();el.addEventListener('pause',function f(){el.removeEventListener('pause',f);add(el.tagName==='AUDIO'?'song_seconds':'sermon_seconds',Math.round((Date.now()-st)/1000))})},true);
+document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.target.closest('[data-do=write]');if(t&&document.getElementById('jr')&&document.getElementById('jr').value.trim())add('note_saved')},true);
+})();
+</script></body></html>

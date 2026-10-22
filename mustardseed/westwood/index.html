@@ -335,5 +335,5 @@ document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.targe
  function iso(d){var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())),n=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-n);var y=t.getUTCFullYear(),w=Math.ceil(((t-Date.UTC(y,0,1))/864e5+1)/7);return y+'-W'+(w<10?'0':'')+w}
  try{var CID='westwood',wk=iso(new Date()),ck='ms-cohort:'+CID,pk='ms-ping:'+CID,co=localStorage.getItem(ck);if(!co){co=wk;localStorage.setItem(ck,co)}
   if(localStorage.getItem(pk)===wk||!navigator.onLine)return;
-  fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'16'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
+  fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'17'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
 </script></body></html>

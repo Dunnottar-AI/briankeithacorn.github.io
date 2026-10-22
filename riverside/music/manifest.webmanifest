@@ -1,0 +1,19 @@
+{
+ "name": "Worship",
+ "short_name": "Worship",
+ "description": "Worship songs sung by the Riverside Church worship team.",
+ "id": "/riverside/music/",
+ "start_url": "/riverside/music/",
+ "scope": "/riverside/music/",
+ "display": "standalone",
+ "background_color": "#f7f8f7",
+ "theme_color": "#111111",
+ "icons": [
+  {
+   "src": "/riverside/music/icon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml",
+   "purpose": "any"
+  }
+ ]
+}

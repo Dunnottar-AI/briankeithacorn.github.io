@@ -166,4 +166,10 @@ document.addEventListener('submit',function(ev){if(ev.target.id==='joinf')add('g
 document.addEventListener('play',function(ev){var el=ev.target;if(!el||!el.tagName)return;if(el.tagName==='AUDIO')add('song_play');var st=Date.now();el.addEventListener('pause',function f(){el.removeEventListener('pause',f);add(el.tagName==='AUDIO'?'song_seconds':'sermon_seconds',Math.round((Date.now()-st)/1000))})},true);
 document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.target.closest('[data-do=write]');if(t&&document.getElementById('jr')&&document.getElementById('jr').value.trim())add('note_saved')},true);
 })();
+/* Weekly count (Brian approved 2026-10-22): at most one ping per device per ISO week. Sends only church, week, first-open week and app version. No ID, no content. */
+(function(){var U='https://mustard-seed-counts.mustardseed-westwood.workers.dev';if(!U||U.indexOf('http')!==0||!window.fetch)return;
+ function iso(d){var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())),n=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-n);var y=t.getUTCFullYear(),w=Math.ceil(((t-Date.UTC(y,0,1))/864e5+1)/7);return y+'-W'+(w<10?'0':'')+w}
+ try{var CID='westwood',wk=iso(new Date()),ck='ms-cohort:'+CID,pk='ms-ping:'+CID,co=localStorage.getItem(ck);if(!co){co=wk;localStorage.setItem(ck,co)}
+  if(localStorage.getItem(pk)===wk||!navigator.onLine)return;
+  fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'16'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
 </script></body></html>

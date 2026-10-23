@@ -34,7 +34,7 @@ function prep(i){var c=CL[i];if(!c||CARDS[c.id])return;CARDS[c.id]='busy';
  var im=new Image();im.crossOrigin='anonymous';var done=false;
  im.onload=function(){if(done)return;done=true;var cv=drawCard(c,im);try{cv.getContext('2d').getImageData(0,0,1,1);fin(cv,true)}catch(e){fin(drawCard(c,null),false)}};
  im.onerror=function(){if(done)return;done=true;fin(drawCard(c,null),false)};setTimeout(function(){im.onerror()},5000);
- im.src='https://i.ytimg.com/vi/'+c.v+'/hqdefault.jpg'}
+ var go2=function(){im.src='https://i.ytimg.com/vi/'+c.v+'/hqdefault.jpg'};if(LOGO.complete)go2();else{var gd=false,g1=function(){if(!gd){gd=true;go2()}};LOGO.addEventListener('load',g1);LOGO.addEventListener('error',g1);setTimeout(g1,2000)}}
 function g(){try{return JSON.parse(localStorage.getItem(K))||{}}catch(e){return {}}}
 function sv(d){try{localStorage.setItem(K,JSON.stringify(d))}catch(e){}}
 var e=function(x){return String(x).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};

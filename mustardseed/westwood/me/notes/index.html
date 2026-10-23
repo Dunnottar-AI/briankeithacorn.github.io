@@ -19,11 +19,13 @@ function draw(){var D=g(),S=D.saved||[],JN=D.journal||{},JK=Object.keys(JN).sort
   h+=row(B+'/steps/','Steps this month','🌱 '+mc+(mc===1?' step':' steps')+' in '+mn,'Tap to see all time');
   h+=row(B+'/me/notes/','My reflections',JK.length?JK.length+(JK.length===1?' reflection':' reflections'):'No reflections yet','Kept on this phone only');
   h+=row(B+'/me/saved/','Saved',S.length?S.length+' saved':'Nothing saved yet','Sermons, songs and verses');
+  var LC=D.clipLikes||[];h+=row(B+'/me/liked/','Liked clips',LC.length?LC.length+(LC.length===1?' liked clip':' liked clips'):'No liked clips yet','Short clips from our pastors');
   h+=row(B+'/me/bible/','Sermons by Bible book','Pick a book of the Bible','See the sermons that teach from it');
   h+=row(B+'/groups/','My small group','Find a small group','Groups that meet at '+e(T.church||'your church'));
   h+='<p class=quiet><a href="'+B+'/about/">About</a><span aria-hidden=true> · </span><a href="'+B+'/me/settings/">Settings</a></p>'}
  else if(V==='notes'){h+='<p class=meta>Your reflections stay on this phone. They are never sent anywhere.'+(TIER==='members_plus'?'':' On this plan each one is kept for 24 hours.')+'</p>'+(JK.length?JK.map(function(k){var n=JN[k];return '<div class=card><span class=k>'+e(new Date(k+'T12:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}))+' · '+e(n.ref||'')+'</span><span style="display:block;color:#262b28;font-size:17px;margin-top:4px">'+e(n.text)+'</span></div>'}).join(''):'<div class=card><span>Write one in the Reflect step on Today. It will show up here.</span></div>')}
  else if(V==='saved'){h+=S.length?S.map(function(x){return '<a class=card href="'+e(x.u)+'"><span class=k>'+(x.k==='song'?'Song':x.k==='verse'?'Verse':'Sermon clip')+'</span><b>'+e(x.t)+'</b>'+(x.q?'<span>“'+e(x.q.trim().replace(/^[“"]+|[”"]+$/g,'').slice(0,120))+'…”</span>':'')+'</a>'}).join(''):'<div class=card style="text-align:center"><b>Nothing saved yet</b><span>Tap ☆ Save on a sermon clip or a song. It will show up here.</span></div>'}
+ else if(V==='liked'){var LC=D.clipLikes||[];h+=LC.length?LC.map(function(x){return '<a class=card href="'+B+'/clips/?c='+encodeURIComponent(x.id)+'"><span class=k>'+e(x.ref)+'</span><b>'+e(x.who)+'</b><span>'+e(x.title)+'</span></a>'}).join(''):'<div class=card style="text-align:center"><b>No liked clips yet</b><span>Tap ♡ Like on a clip. It will show up here.</span></div>';h+='<p><a class=btn href="'+B+'/clips/">Watch clips</a></p>'}
  else if(V==='settings'){h+='<p><button class=btn id=clr style="background:#e9ece7;color:#333;min-height:48px">Clear what this phone remembers</button></p>'}
  document.getElementById('me').innerHTML=h;
  
@@ -180,5 +182,5 @@ document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.targe
  function iso(d){var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())),n=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-n);var y=t.getUTCFullYear(),w=Math.ceil(((t-Date.UTC(y,0,1))/864e5+1)/7);return y+'-W'+(w<10?'0':'')+w}
  try{var CID='westwood',wk=iso(new Date()),ck='ms-cohort:'+CID,pk='ms-ping:'+CID,co=localStorage.getItem(ck);if(!co){co=wk;localStorage.setItem(ck,co)}
   if(localStorage.getItem(pk)===wk||!navigator.onLine)return;
-  fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'19'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
+  fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'20'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
 </script></body></html>

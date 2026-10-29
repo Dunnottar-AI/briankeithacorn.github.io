@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="logo.svg"><link rel="stylesheet" href="style.css"><title>Mustard Seed – a free church app</title><meta name="description" content="Your church's sermons, songs and Bible, in one free app."></head><body><main class="wrap">
+<header><img src="logo.svg" alt=""><a href="index.html">Mustard <span class="y">Seed</span></a></header>
+<h1>Your church's sermons, songs and Bible, in one free app.</h1>
+<p class="lead">No account. No ads. It works right in your phone's web browser.</p>
+<section class="card" id="westwood"><h2>Westwood Baptist Church, Olympia</h2>
+<p>Westwood members can use the app today.</p>
+<a class="btn" href="https://briankeithacorn.github.io/mustardseed/westwood/">Get the Westwood app</a>
+<p>Then add it to your home screen, so it opens like any other app.</p>
+<h3>On iPhone</h3><ol><li>Open the link above in <b>Safari</b>.</li><li>Tap the <b>Share</b> button (a square with an arrow).</li><li>Tap <b>Add to Home Screen</b>, then <b>Add</b>.</li></ol>
+<h3>On Android</h3><ol><li>Open the link above in <b>Chrome</b>.</li><li>Tap the <b>menu</b> (three dots, top right).</li><li>Tap <b>Install app</b> or <b>Add to Home Screen</b>.</li></ol>
+</section>
+<section class="card" id="request"><h2>Get Mustard Seed for your church</h2>
+<p>Tell us about your church. We will write back to you.</p>
+<p class="note">Requests from church staff or administrators get reviewed first.</p>
+<!-- TODO-backend: no server yet. This form opens a prefilled email to a PLACEHOLDER address (hello@getmustardseed.org). Replace with a real form handler later. -->
+<form id="req">
+<label for="name">Your name</label><input id="name" name="name" required autocomplete="name">
+<label for="role">Your role at the church</label><select id="role" name="role" required><option value="">Choose one</option><option>Pastor</option><option>Staff</option><option>Administrator</option><option>Member</option></select>
+<label for="email">Your email <span class="hint">A church email address is best, if you have one.</span></label><input id="email" name="email" type="email" required autocomplete="email">
+<label for="church">Church name</label><input id="church" name="church" required>
+<label for="site">Church website</label><input id="site" name="site" type="url" placeholder="https://" inputmode="url">
+<label for="city">City and state or country</label><input id="city" name="city" required placeholder="Olympia, WA">
+<label for="note">Note <span class="hint">Optional</span></label><textarea id="note" name="note"></textarea>
+<p><button class="btn" type="submit">Send my request</button></p>
+<p class="small">This opens your email app with your answers filled in. Just press send.</p>
+</form></section>
+<section class="card demo"><h2>Please note</h2>
+<p>Mustard Seed is a demo project. We built it for Westwood Baptist Church, and we're sharing it as is. It comes with no warranty of any kind.</p>
+<p>Westwood's sermons and other content belong to Westwood Baptist Church.</p></section>
+<footer><p>A project of Dunnottar Group LLC. &copy; 2026</p><p><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="index.html">Home</a></p></footer></main>
+<script>
+document.getElementById('req').addEventListener('submit',function(e){e.preventDefault();var f=e.target;if(!f.reportValidity())return;
+var g=function(i){return document.getElementById(i).value.trim()};
+var body='Name: '+g('name')+'\nRole: '+g('role')+'\nEmail: '+g('email')+'\nChurch: '+g('church')+'\nWebsite: '+g('site')+'\nCity: '+g('city')+'\n\nNote:\n'+g('note');
+location.href='mailto:hello@getmustardseed.org?subject='+encodeURIComponent('Mustard Seed request: '+g('church'))+'&body='+encodeURIComponent(body);});
+</script></body></html>

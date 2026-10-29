@@ -12,7 +12,7 @@ function setMeta(c){$('who').textContent=c.who;$('ref').textContent=c.ref;$('ref
 function play(c,withSound){cur=c;ended=false;setMeta(c);$('en').hidden=true;
  if(player&&ready){try{player.loadVideoById({videoId:c.v,startSeconds:c.s,endSeconds:c.e});if(withSound||sound)player.unMute();else player.mute()}catch(x){stat(c)}}
  else stat(c,true)}
-function stat(c,auto){player=null;ready=false;VB.innerHTML='<iframe src="https://www.youtube.com/embed/'+c.v+'?start='+c.s+'&end='+c.e+'&playsinline=1&rel=0&fs=1'+(auto?'&autoplay=1':'')+'" title="Sermon clip" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';SB.hidden=true}
+function stat(c,auto){player=null;ready=false;VB.innerHTML='<iframe src="https://www.youtube.com/embed/'+c.v+'?start='+c.s+'&end='+c.e+'&playsinline=1&rel=0&fs=1&autoplay=1&mute=1&enablejsapi=1" title="Sermon clip" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';SB.hidden=true}
 function nextOf(c){var all=[C].concat(N),i=all.findIndex(function(x){return x.id===c.id});return all[(i+1)%all.length]}
 NX.innerHTML='<h2>Watch the next clip</h2><div class=row>'+N.map(function(c){return '<button type=button data-id="'+c.id+'"><img src="https://i.ytimg.com/vi/'+c.v+'/mqdefault.jpg" alt=""><span><b>'+c.who.replace('Pastor ','')+'</b> '+c.ref+'</span></button>'}).join('')+'</div>';
 Array.prototype.forEach.call(NX.querySelectorAll('button'),function(b){b.onclick=function(){var c=N.filter(function(x){return x.id===b.dataset.id})[0];sound=true;SB.hidden=true;play(c,true);scrollTo({top:0,behavior:'smooth'});showInv()}});
@@ -29,10 +29,10 @@ $('get').onclick=function(){if(APPSTORE&&IOS&&!INAPP){location.href=APPSTORE;ret
 $('shx').onclick=function(){$('sheet').hidden=true};
 $('copy').onclick=function(){var u=location.href;try{navigator.clipboard.writeText(u);this.textContent='Link copied'}catch(x){prompt('Copy this link',u)}};
 function boot(){player=new YT.Player('yp',{videoId:C.v,width:'100%',height:'100%',playerVars:{start:C.s,end:C.e,autoplay:1,mute:1,playsinline:1,rel:0,fs:1,iv_load_policy:3},
- events:{onReady:function(){ready=true;try{player.mute();player.playVideo()}catch(x){}},
+ events:{onReady:function(){ready=true;try{player.mute();player.playVideo()}catch(x){}[1500,4000].forEach(function(d){setTimeout(function(){try{var st=player.getPlayerState();if(st!==1&&st!==3&&!ended){player.mute();player.playVideo()}}catch(x){}},d)})},
   onStateChange:function(ev){if(ev.data===0&&!ended){ended=true;$('en').hidden=false;showInv()}}}})}
 setMeta(C);
-var to=setTimeout(function(){if(!ready){stat(C)}},9000);
+var to=setTimeout(function(){if(!ready){stat(C)}},15000);
 if(window.YT&&YT.Player)boot();else{window.onYouTubeIframeAPIReady=function(){boot()};var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';s.onerror=function(){stat(C)};document.head.appendChild(s)}
 window.__share={cur:function(){return cur.id},t:function(){try{return player.getCurrentTime()}catch(x){return -1}},muted:function(){try{return player.isMuted()}catch(x){return null}},end:function(){ended=true;$('en').hidden=false;showInv()},ready:function(){return ready}};
 })();

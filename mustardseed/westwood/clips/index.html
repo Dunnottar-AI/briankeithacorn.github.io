@@ -218,4 +218,19 @@ document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.targe
  try{var CID='westwood',wk=iso(new Date()),ck='ms-cohort:'+CID,pk='ms-ping:'+CID,co=localStorage.getItem(ck);if(!co){co=wk;localStorage.setItem(ck,co)}
   if(localStorage.getItem(pk)===wk||!navigator.onLine)return;
   fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'34'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
-</script></body></html>
+</script><!--qcards--><style>#qcs{position:fixed;z-index:6;left:0;right:0;max-width:480px;margin:0 auto;top:calc(50px + env(safe-area-inset-top));padding:0 10px;font:600 13px system-ui,sans-serif;color:#fff}#qcs .h{display:flex;justify-content:space-between;align-items:center;margin:0 2px 6px;text-shadow:0 1px 4px #000}#qcs .h button{background:rgba(0,0,0,.45);color:#fff;border:0;border-radius:999px;padding:4px 10px;font:600 12px system-ui,sans-serif}#qcs .r{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}#qcs .r::-webkit-scrollbar{display:none}#qcs .k{flex:0 0 auto;width:72px;background:none;border:0;padding:0;color:#fff;text-align:left;font:600 11px system-ui,sans-serif}#qcs .k img{display:block;width:72px;height:128px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,.25)}#qcs .k span{display:block;margin-top:3px;text-shadow:0 1px 3px #000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#qcs.min .r{display:none}#qcm{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;color:#fff;font:15px system-ui,sans-serif}#qcm video{max-height:72vh;max-width:100%;border-radius:12px;background:#1B2433}#qcm .who{margin:10px 0 4px;font-weight:700;color:#F2C14E}#qcm .ser{opacity:.8;font-size:13px;margin-bottom:12px;text-align:center}#qcm a{background:#F2C14E;color:#1B2433;text-decoration:none;font-weight:700;border-radius:999px;padding:10px 18px}#qcm button{margin-top:12px;background:#333;color:#fff;border:0;border-radius:999px;padding:8px 16px;font:600 14px system-ui,sans-serif}</style>
+<script>(function(){var ART='https://mustardseed-art.mustardseed-westwood.workers.dev/westwood',B='/mustardseed/westwood';
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function open(c){var m=el('div');m.id='qcm';m.setAttribute('role','dialog');m.setAttribute('aria-label','Quote card');
+ var v=el('video');v.src=ART+'/'+c.mp4;v.poster=ART+'/'+c.img;v.muted=true;v.autoplay=true;v.loop=true;v.playsInline=true;v.setAttribute('playsinline','');
+ var a=el('a',null,'Hear the full message');a.href=B+'/sermons/all/?v='+encodeURIComponent(c.v)+'&t='+c.t;
+ var x=el('button',null,'Close');x.type='button';x.onclick=function(){m.remove()};
+ m.appendChild(v);m.appendChild(el('div','who',c.speaker||'Westwood Baptist'));m.appendChild(el('div','ser',c.sermon+' \u00b7 '+c.ts));m.appendChild(a);m.appendChild(x);
+ m.addEventListener('click',function(e){if(e.target===m)m.remove()});document.body.appendChild(m)}
+fetch(ART+'/cards.json',{mode:'cors'}).then(function(r){return r.json()}).then(function(L){if(!L||!L.length)return;
+ var s=el('div');s.id='qcs';s.setAttribute('data-noswipe','');var h=el('div','h');h.appendChild(el('span',null,'Quote cards'));var t=el('button',null,'Hide');t.type='button';
+ t.onclick=function(){s.classList.toggle('min');t.textContent=s.classList.contains('min')?'Show':'Hide'};h.appendChild(t);s.appendChild(h);
+ var r=el('div','r');L.forEach(function(c){var k=el('button','k');k.type='button';k.setAttribute('aria-label',(c.speaker||'Quote')+': '+c.quote);
+  var i=el('img');i.src=ART+'/'+c.img;i.alt='';i.loading='lazy';k.appendChild(i);k.appendChild(el('span',null,c.speaker||'Westwood'));k.onclick=function(){open(c)};r.appendChild(k)});
+ s.appendChild(r);document.body.appendChild(s)}).catch(function(){})})();</script>
+</body></html>

@@ -17,7 +17,7 @@ window.wwYT=yt;
 function shield(box,p){return;if(!box||!p||!p.addEventListener)return;if(getComputedStyle(box).position==='static')box.style.position='relative';var a=mk('t'),b=mk('b');function mk(c){var d=document.createElement('div');d.className='wwsh '+c;d.setAttribute('aria-hidden','true');return d}
  function on(){if(!a.parentNode){box.appendChild(a);box.appendChild(b)}}function off(){if(a.parentNode){a.remove();b.remove()}}
  on();p.addEventListener('onStateChange',function(e){if(e.data===1||e.data===3)off();else on()})}
-window.wwShield=shield;
+window.wwShield=shield;window.wwSheet=function(v,t){sheet(v,t)};
 function mkPlayer(slot,v,t){slot.classList.add('wwslot');slot.innerHTML='';var d=document.createElement('div');slot.appendChild(d);
  if(cur&&cur.pauseVideo)try{cur.pauseVideo()}catch(e){}
  yt(function(){var p=new YT.Player(d,{host:H,videoId:v,width:'100%',height:'100%',playerVars:{start:t,playsinline:1,rel:0,autoplay:1,iv_load_policy:3,cc_load_policy:0},events:{onReady:function(e){try{e.target.playVideo()}catch(_){}}}});cur=p;shield(slot,p)})}
@@ -159,4 +159,8 @@ document.addEventListener('click',function(ev){var t=ev.target.closest&&ev.targe
  try{var CID='westwood',wk=iso(new Date()),ck='ms-cohort:'+CID,pk='ms-ping:'+CID,co=localStorage.getItem(ck);if(!co){co=wk;localStorage.setItem(ck,co)}
   if(localStorage.getItem(pk)===wk||!navigator.onLine)return;
   fetch(U+'/ping',{method:'POST',mode:'cors',credentials:'omit',keepalive:true,referrerPolicy:'no-referrer',headers:{'Content-Type':'text/plain'},body:JSON.stringify({church:CID,week:wk,cohort_week:co,app_version:'34'})}).then(function(r){if(r.ok)localStorage.setItem(pk,wk)}).catch(function(){})}catch(e){}})();
-</script></body></html>
+</script><!--qdeep--><script>(function(){var p=new URLSearchParams(location.search),v=p.get('v')||'',t=parseInt(p.get('t')||'0',10)||0;
+if(!/^[\w-]{11}$/.test(v))return;function go(){if(!window.wwSheet)return setTimeout(go,100);window.wwSheet(v,t);
+ var b=document.querySelector('#wwsheet .bar span');if(b)b.textContent='Starting at '+Math.floor(t/60)+':'+('0'+t%60).slice(-2)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go()})();</script>
+</body></html>
